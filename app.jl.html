@@ -1,0 +1,13 @@
+<div v-for="neurons,index in layer_neurons">
+    Layer {{index+2}} <q-slider :min="1" v-model="layer_neurons[index]" label="" :max="16" :step="1"></q-slider>
+
+</div>
+<q-btn color="primary" style="margin-top:5px;margin-bottom:5px;" v-on:click="add_layer = !add_layer" :loading="processing" text-color="black" label="ADD" />
+<q-btn color="primary" style="margin-top:5px;margin-bottom:5px;" v-on:click="remove_layer = !remove_layer" :loading="processing" text-color="black" label="REMOVE" />
+<q-btn color="primary" style="margin-top:5px;margin-bottom:5px;" v-on:click="update = !update" :loading="training" text-color="black" label="UPDATE" />
+<q-btn color="primary" style="margin-top:5px;margin-bottom:5px;" v-on:click="train = !train" :loading="training" text-color="black" label="TRAIN" />
+<br>
+    Training samples <q-slider :min="1" v-model="N_train" label="" :max="500" :step="1"></q-slider>
+    Epochs <q-slider :min="1" v-model="epochs" label="" :max="3000" :step="100"></q-slider>
+<h2> {{loss}}</h2>
+<plotly :data="traces" :layout="{}" ></plotly>
