@@ -2,6 +2,8 @@
 
 Interactive dashboard to build and train a neural network.
 
+![preview](preview.gif)
+
 ## Installation
 
 Clone the repository and install the dependencies:
