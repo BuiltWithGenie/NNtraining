@@ -1,8 +1,6 @@
-## Simulation of the Lorenz equations
+## Neural network training
 
-Dashboard showing a real-time simulation of the Lorenz equations.
-
-![preview](lorenz.gif)
+Interactive dashboard to build and train a neural network.
 
 ## Installation
 
