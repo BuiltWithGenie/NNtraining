@@ -14,10 +14,10 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag pjgim/multipage
+      run: docker build . --file Dockerfile --tag pjgim/nntrain
 
     - name: Log in to Docker Hub
       run: echo "${{ secrets.DOCKER_HUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_HUB_USERNAME }}" --password-stdin
 
     - name: Push Docker image
-      run: docker push pjgim/multipage
+      run: docker push pjgim/nntrain
