@@ -15,12 +15,12 @@ using GenieFramework
     @in training = false
     @out loss = 0.0
     @in epochs = 2000
-    @onchange add_layer begin
+    @onbutton add_layer begin
         @show layer_neurons
         push!(layer_neurons,1)
         layer_neurons = copy(layer_neurons)
     end
-    @onchange remove_layer begin
+    @onbutton remove_layer begin
         @show layer_neurons
         pop!(layer_neurons)
         layer_neurons = copy(layer_neurons)
