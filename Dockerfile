@@ -15,4 +15,4 @@ ENV GENIE_HOST "0.0.0.0"
 ENV PORT "8000"
 ENV WSPORT "8000"
 ENV EARLYBIND "true"
-ENTRYPOINT ["julia", "--project", "-e", "using GenieFramework; Genie.loadapp(); up(async=false);"]
+ENTRYPOINT ["julia", "--sysimage=/sysimages/map.so", "--project", "-e", "using GenieFramework; Genie.loadapp(); up(async=false);"]
