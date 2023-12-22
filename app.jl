@@ -19,11 +19,13 @@ using GenieFramework
         @show layer_neurons
         push!(layer_neurons,1)
         layer_neurons = copy(layer_neurons)
+        update = !update
     end
     @onbutton remove_layer begin
         @show layer_neurons
         pop!(layer_neurons)
         layer_neurons = copy(layer_neurons)
+        update = !update
     end
     @onchange isready, update begin
         layer_neurons_extended = vcat([13, layer_neurons, 1]...)

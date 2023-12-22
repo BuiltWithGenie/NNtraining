@@ -1,3 +1,11 @@
+
+<header class="st-module" style="padding-left:10px;padding-top:5px">
+    <h1 style="border-bottom:0px">Neural network layer editor</h1>
+</header>
+<div class="row">
+    <div class="st-col col-12 col-sm st-module">
+
+<h4> Layers</h4>
 <div v-for="neurons,index in layer_neurons">
     Layer {{index+2}} <q-slider :min="1" v-model="layer_neurons[index]" label="" :max="16" :step="1"></q-slider>
 
@@ -7,11 +15,22 @@
 <q-btn color="primary" style="margin-top:5px;margin-bottom:5px;" v-on:click="remove_layer = true"
     :loading="remove_layer" text-color="black" label="REMOVE" />
 <q-btn color="primary" style="margin-top:5px;margin-bottom:5px;" v-on:click="update = !update" :loading="training"
-    text-color="black" label="UPDATE" />
-<q-btn color="primary" style="margin-top:5px;margin-bottom:5px;" v-on:click="train = !train" :loading="training"
-    text-color="black" label="TRAIN" />
-<br>
+    text-color="black" label="UPDATE DIAGRAM" />
+    </div>
+    <div class="st-col col-12 col-sm st-module">
+
+<h4>Training</h4><br>
 Training samples <q-slider :min="1" v-model="N_train" label="" :max="500" :step="1"></q-slider>
 Epochs <q-slider :min="1" v-model="epochs" label="" :max="3000" :step="100"></q-slider>
-<h2> {{loss}}</h2>
+<q-btn color="grey" style="margin-top:5px;margin-bottom:5px;" v-on:click="train = !train" :loading="training"
+    text-color="black" label="TRAIN" disable="true"><q-tooltip>Run the app locally to enable this button.</q-tooltip></q-btn><br>
+<h4> Loss</h4>
+<br>
+{{loss}}
+    </div>
+</div>
+<div class="row">
+    <div class="st-col col-12 col-sm st-module">
 <plotly :data="traces" :layout="{}"></plotly>
+</div>
+</div>
